@@ -21,6 +21,27 @@ public class LecturerServiceImpl implements LecturerService{
        return mapper.modelToDto(dao.findById(id).get());
     }
 
+    @Override
+    public LecturerDto createLecturer(LecturerDto lecturerDto) {
+
+
+
+        return mapper.modelToDto(dao.save(mapper.dtoToModel(lecturerDto)));
+    }
+
+    @Override
+    public void removeLecturer(Long id) {
+
+        dao.deleteById(id);
+    }
+
+    @Override
+    public LecturerDto updateLecturer(LecturerDto lecturerDto) {
+
+        return mapper.modelToDto(dao.save(mapper.dtoToModel(lecturerDto)));
+    }
+
+
 //    @Override
 //    public LecturerDto loginLecturer(LecturerDto lecturerDto) {
 //
