@@ -1,7 +1,6 @@
 package com.emiryucel.courseportal.service;
 
 import com.emiryucel.courseportal.dto.LecturerDto;
-import org.springframework.stereotype.Service;
 
 
 public interface LecturerService {

@@ -1,7 +1,5 @@
 package com.emiryucel.courseportal.dto;
 
-import com.emiryucel.courseportal.model.Module;
-
 import java.util.List;
 
 public class LecturerDto {
@@ -11,15 +9,15 @@ public class LecturerDto {
     private String firstName;
     private String lastName;
     private String department;
-    private List<ModuleDto> modules;
+    private List<ModuleDto> moduleDtoList;
 
-    public LecturerDto(Long id, String lecturerId, String firstName, String lastName, String department, List<ModuleDto> modules) {
+    public LecturerDto(Long id, String lecturerId, String firstName, String lastName, String department, List<ModuleDto> moduleDtoList) {
         this.id = id;
         this.lecturerId = lecturerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
-        this.modules = modules;
+        this.moduleDtoList = moduleDtoList;
     }
 
     public Long getId() {
@@ -62,11 +60,11 @@ public class LecturerDto {
         this.department = department;
     }
 
-    public List<ModuleDto> getModules() {
-        return modules;
+    public List<ModuleDto> getModuleDtoList() {
+        return moduleDtoList;
     }
 
-    public void setModules(List<ModuleDto> modules) {
-        this.modules = modules;
+    public void setModuleDtoList(List<ModuleDto> moduleDtoList) {
+        this.moduleDtoList = moduleDtoList;
     }
 }

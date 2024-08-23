@@ -1,30 +1,34 @@
 package com.emiryucel.courseportal.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.List;
 
 @Entity
 public class Lecturer {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String lecturerId;
     private String firstName;
     private String lastName;
     private String department;
     @ManyToMany
-    private List<Module> modules;
+    private List<Module> moduleList;
 
-    public Lecturer(Long id, String lecturerId, String firstName, String lastName, String department, List<Module> modules) {
+    public Lecturer(Long id, String lecturerId, String firstName, String lastName, String department, List<Module> moduleList) {
         this.id = id;
         this.lecturerId = lecturerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
-        this.modules = modules;
+        this.moduleList = moduleList;
     }
+
+    public Lecturer() {
+
+    }
+
 
     public Long getId() {
         return id;
@@ -66,11 +70,11 @@ public class Lecturer {
         this.department = department;
     }
 
-    public List<Module> getModules() {
-        return modules;
+    public List<Module> getModuleList() {
+        return moduleList;
     }
 
-    public void setModules(List<Module> modules) {
-        this.modules = modules;
+    public void setModuleList(List<Module> moduleList) {
+        this.moduleList = moduleList;
     }
 }

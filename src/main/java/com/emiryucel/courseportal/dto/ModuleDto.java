@@ -12,13 +12,13 @@ public class ModuleDto {
 
     private String shortCode;
 
-    private List<LecturerDto> lecturerList;
+    private List<LecturerDto> lecturerDtoList;
 
-    public ModuleDto(Long id, String name, String shortCode, List<LecturerDto> lecturerList) {
+    public ModuleDto(Long id, String name, String shortCode, List<LecturerDto> lecturerDtoList) {
         this.id = id;
         this.name = name;
         this.shortCode = shortCode;
-        this.lecturerList = lecturerList;
+        this.lecturerDtoList = lecturerDtoList;
     }
 
     public Long getId() {
@@ -45,11 +45,11 @@ public class ModuleDto {
         this.shortCode = shortCode;
     }
 
-    public void setLecturerList(List<LecturerDto> lecturerList) {
-        this.lecturerList = lecturerList;
+    public List<LecturerDto> getLecturerDtoList() {
+        return lecturerDtoList;
     }
 
-    public List<LecturerDto> getLecturerList() {
-        return lecturerList;
+    public void setLecturerDtoList(List<LecturerDto> lecturerDtoList) {
+        this.lecturerDtoList = lecturerDtoList;
     }
 }
