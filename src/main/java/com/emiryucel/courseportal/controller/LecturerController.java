@@ -6,7 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController(value = "/lecturer")
+@RestController
+@RequestMapping("/lecturer")
 public class LecturerController {
 
     private LecturerService service;
@@ -15,28 +16,30 @@ public class LecturerController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
+    @ResponseBody
     public LecturerDto getLecturer(@PathVariable Long id) {
         return service.getLecturerWithId(id);
     }
 
     @PostMapping
-    public ResponseEntity saveLecturer(@RequestBody LecturerDto lecturerDto){
+    public ResponseEntity saveLecturer(@RequestBody LecturerDto lecturerDto) {
 
-        LecturerDto savedLecturer= service.createLecturer(lecturerDto);
+        LecturerDto savedLecturer = service.createLecturer(lecturerDto);
 
-        return new ResponseEntity(savedLecturer,HttpStatus.CREATED);
+        return new ResponseEntity(savedLecturer, HttpStatus.CREATED);
     }
 
     @PutMapping
-    public ResponseEntity editLecturer(@RequestBody LecturerDto lecturerDto){
+    public ResponseEntity editLecturer(@RequestBody LecturerDto lecturerDto) {
+        // service.getLecturerWithId(lecturerDto.getId());
+        LecturerDto editedLecturer = service.createLecturer(lecturerDto);
 
-        LecturerDto editedLecturer= service.createLecturer(lecturerDto);
-
-        return new ResponseEntity(editedLecturer,HttpStatus.OK);
+        return new ResponseEntity(editedLecturer, HttpStatus.OK);
     }
-    @DeleteMapping
-    public ResponseEntity deleteLecturer(@PathVariable Long id){
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteLecturer(@PathVariable Long id) {
 
         service.removeLecturer(id);
 

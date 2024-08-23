@@ -15,7 +15,7 @@ public class Module {
 
     private String shortCode;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "moduleList")
     private List<Lecturer> lecturerList;
 
 

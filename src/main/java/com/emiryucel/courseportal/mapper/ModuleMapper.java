@@ -4,6 +4,7 @@ import com.emiryucel.courseportal.dto.LecturerDto;
 import com.emiryucel.courseportal.dto.ModuleDto;
 import com.emiryucel.courseportal.model.Lecturer;
 import com.emiryucel.courseportal.model.Module;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class ModuleMapper {
 
     private LecturerMapper lecturerMapper;
 
-    public ModuleMapper(LecturerMapper lecturerMapper) {
+    public ModuleMapper(@Lazy LecturerMapper lecturerMapper) {
         this.lecturerMapper = lecturerMapper;
     }
 
@@ -23,7 +24,7 @@ public class ModuleMapper {
 
     }
     public Module dtoToModel(ModuleDto moduleDto){
-        return new Module(moduleDto.getId(),moduleDto.getName(),moduleDto.getShortCode(),lecturerMapper.dtoToModelList(moduleDto.getLecturerList()));
+        return new Module(moduleDto.getId(),moduleDto.getName(),moduleDto.getShortCode(),lecturerMapper.dtoToModelList(moduleDto.getLecturerDtoList()));
     }
 
     public List<ModuleDto> modelToDtoList(List<Module> moduleList){
