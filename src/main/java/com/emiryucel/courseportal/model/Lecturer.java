@@ -16,6 +16,11 @@ public class Lecturer {
     @ManyToMany
     private List<Module> moduleList;
 
+
+    public Lecturer() {
+
+    }
+
     public Lecturer(Long id, String lecturerId, String firstName, String lastName, String department, List<Module> moduleList) {
         this.id = id;
         this.lecturerId = lecturerId;
@@ -25,9 +30,7 @@ public class Lecturer {
         this.moduleList = moduleList;
     }
 
-    public Lecturer() {
 
-    }
 
 
     public Long getId() {

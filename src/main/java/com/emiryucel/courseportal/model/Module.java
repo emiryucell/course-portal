@@ -18,7 +18,9 @@ public class Module {
     @ManyToMany(mappedBy = "moduleList")
     private List<Lecturer> lecturerList;
 
+    public Module() {
 
+    }
 
     public Module(Long id, String name, String shortCode, List<Lecturer> lecturerList) {
         this.id = id;
@@ -27,9 +29,7 @@ public class Module {
         this.lecturerList = lecturerList;
     }
 
-    public Module() {
 
-    }
 
     public Long getId() {
         return id;

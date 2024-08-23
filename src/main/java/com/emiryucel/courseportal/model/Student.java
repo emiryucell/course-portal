@@ -18,6 +18,17 @@ public class Student {
 
     private String degree;
 
+    public Student() {
+    }
+
+    public Student(Long id, String studentId, String firstName, String lastName, String degree) {
+        this.id = id;
+        this.studentId = studentId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.degree = degree;
+    }
+
     public Long getId() {
         return id;
     }
