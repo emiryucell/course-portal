@@ -8,6 +8,13 @@ public class StudentDto {
     private String lastName;
     private String degree;
 
+    public StudentDto(Long id, String studentId, String firstName, String lastName, String degree) {
+        this.id = id;
+        this.studentId = studentId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.degree = degree;
+    }
 
     public Long getId() {
         return id;
