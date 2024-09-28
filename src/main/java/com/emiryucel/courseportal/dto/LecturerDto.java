@@ -20,6 +20,10 @@ public class LecturerDto {
         this.moduleDtoList = moduleDtoList;
     }
 
+    public LecturerDto() {
+
+    }
+
     public Long getId() {
         return id;
     }
