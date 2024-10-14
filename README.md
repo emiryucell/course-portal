@@ -1,0 +1,1 @@
+I have started to build a backend application using Java and Spring Boot. My aim is to develop a Spring Boot application as a best practice guide. However, I'm just at the beginning, and I will continue when I find time.
